@@ -1,4 +1,3 @@
-// app/(root)/page.tsx atau lokasi file page kamu
 import { getStats } from "@/actions/stats";
 import { Dashboard } from "./_components/stats";
 
@@ -12,7 +11,7 @@ export default async function Home() {
         totalWeatherTypes={stats.totalWeatherTypes}
         totalPredictions={stats.totalPredictions}
         activeModels={stats.activeModels}
-        avgPrice={stats.avgPrice} // ubah di sini
+        avgPrice={stats.avgPrice}
         lastTrainingDate={stats.lastTrainingDate}
         recentPredictions={stats.recentPredictions}
       />

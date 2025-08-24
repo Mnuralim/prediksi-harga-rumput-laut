@@ -14,32 +14,23 @@ export const getStats = unstable_cache(
       lastTrainingDate,
       recentPredictions,
     ] = await Promise.all([
-      // Total baris data harga/produksi rumput laut
       prisma.seaweedPrices.count(),
-
-      // Jumlah tipe cuaca (distinct) yang pernah tercatat di log prediksi
       prisma.predictionLog
         .groupBy({
           by: ["weather"],
         })
         .then((rows) => rows.length),
-
-      // Total log prediksi
       prisma.predictionLog.count(),
-
-      // Model aktif
       prisma.regressionCoefficients.count({
         where: { isActive: true },
       }),
 
-      // Rata-rata jumlah produksi (bisa diganti ke rata-rata harga jika perlu)
       prisma.seaweedPrices
         .aggregate({
           _avg: { price: true },
         })
         .then((r) => r._avg.price || 0),
 
-      // Tanggal pelatihan model terakhir
       prisma.regressionCoefficients
         .findFirst({
           orderBy: { trainedAt: "desc" },
@@ -47,17 +38,16 @@ export const getStats = unstable_cache(
         })
         .then((r) => r?.trainedAt || null),
 
-      // 5 prediksi terbaru
       prisma.predictionLog.findMany({
         take: 5,
         orderBy: { createdAt: "desc" },
         select: {
           id: true,
-          date: true, // tanggal_panen
-          weather: true, // cuaca
-          productionCost: true, // biaya_produksi
-          predictionValue: true, // nilai_prediksi
-          modelUsed: true, // model_yang_digunakan
+          date: true,
+          weather: true,
+          productionCost: true,
+          predictionValue: true,
+          modelUsed: true,
           createdAt: true,
         },
       }),
@@ -75,6 +65,6 @@ export const getStats = unstable_cache(
   },
   ["dashboard-stats"],
   {
-    revalidate: 300, // Cache 5 menit
+    revalidate: 300,
   }
 );

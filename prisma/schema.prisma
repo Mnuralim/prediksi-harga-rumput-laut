@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Admin {
@@ -22,7 +23,7 @@ model SeaweedPrices {
   id                 String   @id @unique @default(uuid())
   date               DateTime @unique @map("tanggal")
   productionQuantity Int      @map("jumlah_produksi")
-  quality            Int      @map("kualitas") @db.TinyInt
+  quality            Int      @map("kualitas")
   demand             Int      @map("permintaan")
   price              Float    @map("harga")
   createdAt          DateTime @default(now()) @map("created_at")
