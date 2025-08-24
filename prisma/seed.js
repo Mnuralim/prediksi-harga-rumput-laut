@@ -30,7 +30,6 @@ async function createAdmin() {
 async function createSeaweedPrices() {
   console.log("Seeding seaweed prices...");
 
-  // Check if data already exists
   const existingData = await prisma.seaweedPrices.findFirst();
   if (existingData) {
     console.log("Seaweed prices data already exists. Skipping seeding.");
@@ -38,7 +37,6 @@ async function createSeaweedPrices() {
   }
 
   const seaweedData = [
-    // Januari 2024
     {
       date: "2024-01-03",
       productionQuantity: 1250,
@@ -74,8 +72,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 19200.0,
     },
-
-    // Februari 2024
     {
       date: "2024-02-05",
       productionQuantity: 1680,
@@ -104,8 +100,6 @@ async function createSeaweedPrices() {
       demand: 3,
       price: 21500.75,
     },
-
-    // Maret 2024
     {
       date: "2024-03-04",
       productionQuantity: 1750,
@@ -135,7 +129,6 @@ async function createSeaweedPrices() {
       price: 22400.25,
     },
 
-    // April 2024
     {
       date: "2024-04-01",
       productionQuantity: 1890,
@@ -171,8 +164,6 @@ async function createSeaweedPrices() {
       demand: 3,
       price: 25800.25,
     },
-
-    // Mei 2024
     {
       date: "2024-05-06",
       productionQuantity: 1180,
@@ -201,8 +192,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 11800.0,
     },
-
-    // Juni 2024
     {
       date: "2024-06-03",
       productionQuantity: 2150,
@@ -231,8 +220,6 @@ async function createSeaweedPrices() {
       demand: 3,
       price: 21900.5,
     },
-
-    // Juli 2024
     {
       date: "2024-07-01",
       productionQuantity: 1720,
@@ -269,7 +256,6 @@ async function createSeaweedPrices() {
       price: 20800.5,
     },
 
-    // Agustus 2024
     {
       date: "2024-08-05",
       productionQuantity: 1240,
@@ -298,8 +284,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 12800.0,
     },
-
-    // September 2024
     {
       date: "2024-09-02",
       productionQuantity: 2180,
@@ -335,8 +319,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 23200.0,
     },
-
-    // Oktober 2024
     {
       date: "2024-10-07",
       productionQuantity: 820,
@@ -365,8 +347,6 @@ async function createSeaweedPrices() {
       demand: 3,
       price: 25200.75,
     },
-
-    // November 2024
     {
       date: "2024-11-04",
       productionQuantity: 1180,
@@ -395,8 +375,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 11400.25,
     },
-
-    // Desember 2024
     {
       date: "2024-12-02",
       productionQuantity: 2250,
@@ -432,8 +410,6 @@ async function createSeaweedPrices() {
       demand: 3,
       price: 24600.25,
     },
-
-    // Januari 2025
     {
       date: "2025-01-06",
       productionQuantity: 950,
@@ -462,8 +438,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 22900.0,
     },
-
-    // Februari 2025 (data terbaru)
     {
       date: "2025-02-03",
       productionQuantity: 1280,
@@ -493,7 +467,6 @@ async function createSeaweedPrices() {
       price: 24200.5,
     },
 
-    // Maret 2025
     {
       date: "2025-03-03",
       productionQuantity: 850,
@@ -529,8 +502,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 16800.5,
     },
-
-    // April 2025
     {
       date: "2025-04-07",
       productionQuantity: 2780,
@@ -559,8 +530,6 @@ async function createSeaweedPrices() {
       demand: 2,
       price: 13200.0,
     },
-
-    // Mei 2025
     {
       date: "2025-05-05",
       productionQuantity: 2350,
@@ -589,8 +558,6 @@ async function createSeaweedPrices() {
       demand: 1,
       price: 14400.75,
     },
-
-    // Juni 2025
     {
       date: "2025-06-02",
       productionQuantity: 2950,
@@ -627,7 +594,6 @@ async function createSeaweedPrices() {
       price: 32400.75,
     },
 
-    // Juli 2025 (data terbaru)
     {
       date: "2025-07-07",
       productionQuantity: 1620,
