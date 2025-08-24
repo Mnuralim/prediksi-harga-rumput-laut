@@ -127,6 +127,7 @@ export async function trainRegressionModel() {
   }
   revalidatePath("/train");
   revalidatePath("/test");
+  revalidatePath("/dashboard");
   revalidatePath("/predict");
   redirect(`/train?success=1&message=Model berhasil dilatih`);
 }
