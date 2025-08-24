@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @unique @default(uuid())
+  username  String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("admin")
+}
+
+model SeaweedPrices {
+  id                 String   @id @unique @default(uuid())
+  date               DateTime @unique @map("tanggal")
+  productionQuantity Int      @map("jumlah_produksi")
+  quality            Int      @map("kualitas") @db.TinyInt
+  demand             Int      @map("permintaan")
+  price              Float    @map("harga")
+  createdAt          DateTime @default(now()) @map("created_at")
+
+  @@map("harga_rumput_laut")
+}
+
+model RegressionCoefficients {
+  id                      String   @id @unique @default(uuid())
+  modelName               String   @unique @map("nama_model")
+  intercept               Float    @map("intercept") // (b0)
+  productionQuantityCoeff Float    @map("koefisien_jumlah_produksi") // (b1)
+  qualityCoeff            Float    @map("koefisien_kualitas") // (b2)
+  demandCoeff             Float    @map("koefisien_permintaan") // (b3)
+  mape                    Float?   @map("mape") // Mean Absolute Percentage Error
+  pe                      Float?   @map("pe") // Percentage Error
+  rSquared                Float?   @map("r_squared") // Coefficient of Determination
+  rmse                    Float?   @map("rmse") // Root Mean Square Error
+  trainingDataCount       Int      @map("jumlah_data_latih")
+  trainedAt               DateTime @default(now()) @map("waktu_latih")
+  isActive                Boolean  @default(true) @map("aktif")
+  createdAt               DateTime @default(now()) @map("created_at")
+
+  @@map("koefisien_regresi")
+}
+
+model PredictionLog {
+  id              String   @id @unique @default(uuid())
+  date            DateTime @unique @map("tanggal_panen")
+  weather         String   @map("cuaca")
+  productionCost  Float    @map("biaya_produksi")
+  predictionValue Float    @map("nilai_prediksi")
+  modelUsed       String   @map("model_yang_digunakan")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  @@map("log_prediksi")
+}
