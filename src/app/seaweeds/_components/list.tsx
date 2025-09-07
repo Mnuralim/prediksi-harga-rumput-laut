@@ -11,6 +11,7 @@ import { Alert } from "@/app/_components/alert";
 import { useRouter } from "next/navigation";
 import { deleteSeaweed } from "@/actions/seaweed";
 import { SeaweedPricesForm } from "./form";
+import { SeaweedFilterControl } from "./filter-controll";
 
 interface Props {
   pagination: PaginationProps;
@@ -118,6 +119,12 @@ export const SeaWeedList = ({ pagination, seaWeeds }: Props) => {
         </button>
       </div>
 
+      <SeaweedFilterControl
+        currentEndDate={pagination.preserveParams?.endDate as string}
+        currentStartDate={pagination.preserveParams?.startDate as string}
+        currentSortBy={pagination.preserveParams?.sortBy as string}
+        currentSortOrder={pagination.preserveParams?.sortOrder as string}
+      />
       <Tabel columns={columns} data={seaWeeds} />
 
       <div className="mt-8">

@@ -27,6 +27,7 @@ model SeaweedPrices {
   demand             Int      @map("permintaan")
   price              Float    @map("harga")
   createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @default(now()) @updatedAt @map("updated_at")
 
   @@map("harga_rumput_laut")
 }
