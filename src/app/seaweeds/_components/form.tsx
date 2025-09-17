@@ -131,11 +131,11 @@ export const SeaweedPricesForm = ({
               required
             >
               <option value="">Pilih kualitas</option>
-              <option value="1">Sangat Rendah</option>
-              <option value="2">Rendah</option>
-              <option value="3">Sedang</option>
-              <option value="4">Tinggi</option>
-              <option value="5">Sangat Tinggi</option>
+              <option value="1">Sangat Rendah (1)</option>
+              <option value="2">Rendah (2)</option>
+              <option value="3">Sedang (3)</option>
+              <option value="4">Tinggi (4)</option>
+              <option value="5">Sangat Tinggi (5)</option>
             </select>
           </div>
         </div>
@@ -163,9 +163,9 @@ export const SeaweedPricesForm = ({
               required
             >
               <option value="">Pilih tingkat permintaan</option>
-              <option value="1">Rendah</option>
-              <option value="2">Normal</option>
-              <option value="3">Tinggi</option>
+              <option value="1">Rendah (1)</option>
+              <option value="2">Normal (2)</option>
+              <option value="3">Tinggi (3)</option>
             </select>
           </div>
         </div>
