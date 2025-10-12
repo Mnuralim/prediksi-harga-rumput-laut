@@ -126,14 +126,26 @@ export const PredictForm = () => {
 
       {state.data && state.success && (
         <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-gradient-to-r from-blue-600 to-emerald-600 px-6 py-4">
+          <div
+            className={`px-6 py-4 ${
+              (state.data.predictedSeaweed ?? 0) < 0
+                ? "bg-gradient-to-r from-amber-600 to-orange-600"
+                : "bg-gradient-to-r from-blue-600 to-emerald-600"
+            }`}
+          >
             <div className="flex items-center gap-3">
               <div className="bg-white/20 rounded-full p-2">
-                <CheckCircle className="w-6 h-6 text-white" />
+                {(state.data.predictedSeaweed ?? 0) < 0 ? (
+                  <AlertCircle className="w-6 h-6 text-white" />
+                ) : (
+                  <CheckCircle className="w-6 h-6 text-white" />
+                )}
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg">
-                  Hasil Prediksi Berhasil
+                  {(state.data.predictedSeaweed ?? 0) < 0
+                    ? "Hasil Prediksi - Perlu Perhatian"
+                    : "Hasil Prediksi Berhasil"}
                 </h3>
                 <p className="text-blue-100 text-sm">
                   Prediksi berdasarkan data yang Anda masukkan
@@ -143,6 +155,42 @@ export const PredictForm = () => {
           </div>
 
           <div className="p-6">
+            {(state.data.predictedSeaweed ?? 0) < 0 && (
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-amber-800 font-semibold mb-2">
+                      ⚠️ Nilai Prediksi Tidak Valid (Negatif)
+                    </h4>
+                    <p className="text-amber-700 text-sm mb-2">
+                      Model regresi linear berganda menghasilkan nilai negatif
+                      (Rp {state.data.predictedSeaweed?.toLocaleString("id-ID")}
+                      ). Hal ini menandakan:
+                    </p>
+                    <ul className="text-amber-700 text-sm space-y-1 ml-4">
+                      <li>
+                        • Kombinasi input (produksi, kualitas, permintaan)
+                        berada di luar rentang data pelatihan
+                      </li>
+                      <li>
+                        • Kualitas atau permintaan yang terlalu rendah dengan
+                        produksi tertentu
+                      </li>
+                      <li>
+                        • Model perlu dikalibrasi dengan data yang lebih
+                        representatif
+                      </li>
+                    </ul>
+                    <p className="text-amber-800 text-sm font-medium mt-3">
+                      💡 Saran: Sesuaikan input Anda atau konsultasikan dengan
+                      data historis yang tersedia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center gap-3 bg-white rounded-xl p-4 shadow-md border border-blue-200 mb-4">
@@ -153,7 +201,13 @@ export const PredictForm = () => {
                     <p className="text-sm text-gray-600 font-medium">
                       Estimasi Harga Rumput Laut
                     </p>
-                    <p className="text-3xl font-bold text-gray-800">
+                    <p
+                      className={`text-3xl font-bold ${
+                        (state.data.predictedSeaweed ?? 0) < 0
+                          ? "text-red-600"
+                          : "text-gray-800"
+                      }`}
+                    >
                       Rp{" "}
                       {state.data.predictedSeaweed?.toLocaleString("id-ID") ||
                         "0"}
@@ -161,6 +215,11 @@ export const PredictForm = () => {
                         /KG
                       </span>
                     </p>
+                    {(state.data.predictedSeaweed ?? 0) < 0 && (
+                      <p className="text-xs text-red-500 font-medium mt-1">
+                        ⚠️ Nilai tidak valid
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
