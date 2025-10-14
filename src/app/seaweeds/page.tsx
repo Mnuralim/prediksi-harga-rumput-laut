@@ -30,7 +30,7 @@ export default async function SeaweedPage({ searchParams }: Props) {
     getAllSeaweeds(
       limit || "10",
       skip || "0",
-      sortBy,
+      sortBy || "date",
       startDate,
       endDate,
       sortOrder

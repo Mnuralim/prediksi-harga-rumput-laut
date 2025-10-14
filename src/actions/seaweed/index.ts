@@ -13,14 +13,7 @@ export const getAllSeaweeds = unstable_cache(async function getHarvests(
   endDate?: string,
   sortOrder?: string
 ) {
-  console.log({
-    take,
-    skip,
-    sortBy,
-    startDate,
-    endDate,
-    sortOrder,
-  });
+  console.log(sortBy, sortOrder);
   const whereConditions: Prisma.SeaweedPricesWhereInput[] = [];
 
   if (startDate && endDate) {
@@ -39,7 +32,7 @@ export const getAllSeaweeds = unstable_cache(async function getHarvests(
     };
   } else {
     orderBy = {
-      updatedAt: "desc",
+      date: "asc",
     };
   }
 
