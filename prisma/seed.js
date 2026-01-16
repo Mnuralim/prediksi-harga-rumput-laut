@@ -35,7 +35,7 @@ async function createSeaweedPrices() {
     {
       date: "2021-01-01T00:00:00.000Z",
       productionQuantity: 12,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 1, // Rendah
       price: 20000,
     },
@@ -63,7 +63,7 @@ async function createSeaweedPrices() {
     {
       date: "2021-01-05T00:00:00.000Z",
       productionQuantity: 20,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -77,14 +77,14 @@ async function createSeaweedPrices() {
     {
       date: "2021-01-07T00:00:00.000Z",
       productionQuantity: 16,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 1, // Rendah
       price: 11000,
     },
     {
       date: "2021-01-08T00:00:00.000Z",
       productionQuantity: 11,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 2, // Sedang
       price: 20000,
     },
@@ -112,7 +112,7 @@ async function createSeaweedPrices() {
     {
       date: "2021-01-12T00:00:00.000Z",
       productionQuantity: 17,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -126,7 +126,7 @@ async function createSeaweedPrices() {
     {
       date: "2022-01-02T00:00:00.000Z",
       productionQuantity: 18,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 1, // Rendah
       price: 11000,
     },
@@ -140,7 +140,7 @@ async function createSeaweedPrices() {
     {
       date: "2022-01-04T00:00:00.000Z",
       productionQuantity: 20,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -154,7 +154,7 @@ async function createSeaweedPrices() {
     {
       date: "2022-01-06T00:00:00.000Z",
       productionQuantity: 14,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 1, // Rendah
       price: 20000,
     },
@@ -182,14 +182,14 @@ async function createSeaweedPrices() {
     {
       date: "2022-01-10T00:00:00.000Z",
       productionQuantity: 24,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
     {
       date: "2022-01-11T00:00:00.000Z",
       productionQuantity: 17,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 2, // Sedang
       price: 12000,
     },
@@ -203,7 +203,7 @@ async function createSeaweedPrices() {
     {
       date: "2023-01-01T00:00:00.000Z",
       productionQuantity: 28,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -238,14 +238,14 @@ async function createSeaweedPrices() {
     {
       date: "2023-01-06T00:00:00.000Z",
       productionQuantity: 32,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
     {
       date: "2023-01-07T00:00:00.000Z",
       productionQuantity: 22,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 1, // Rendah
       price: 11000,
     },
@@ -273,7 +273,7 @@ async function createSeaweedPrices() {
     {
       date: "2023-01-11T00:00:00.000Z",
       productionQuantity: 31,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 2, // Sedang
       price: 20000,
     },
@@ -308,7 +308,7 @@ async function createSeaweedPrices() {
     {
       date: "2024-01-04T00:00:00.000Z",
       productionQuantity: 38,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -329,14 +329,14 @@ async function createSeaweedPrices() {
     {
       date: "2024-01-07T00:00:00.000Z",
       productionQuantity: 29,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 1, // Rendah
       price: 11000,
     },
     {
       date: "2024-01-08T00:00:00.000Z",
       productionQuantity: 40,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -357,7 +357,7 @@ async function createSeaweedPrices() {
     {
       date: "2024-01-11T00:00:00.000Z",
       productionQuantity: 37,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 2, // Sedang
       price: 20000,
     },
@@ -392,7 +392,7 @@ async function createSeaweedPrices() {
     {
       date: "2025-01-04T00:00:00.000Z",
       productionQuantity: 45,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -413,14 +413,14 @@ async function createSeaweedPrices() {
     {
       date: "2025-01-07T00:00:00.000Z",
       productionQuantity: 36,
-      quality: 2, // Sangat Rendah
+      quality: 1, // Sangat Rendah
       demand: 1, // Rendah
       price: 11000,
     },
     {
       date: "2025-01-08T00:00:00.000Z",
       productionQuantity: 48,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 3, // Tinggi
       price: 24000,
     },
@@ -441,7 +441,7 @@ async function createSeaweedPrices() {
     {
       date: "2025-01-11T00:00:00.000Z",
       productionQuantity: 40,
-      quality: 5, // Tinggi
+      quality: 4, // Tinggi
       demand: 2, // Sedang
       price: 20000,
     },
